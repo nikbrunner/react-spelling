@@ -6,6 +6,7 @@ const Input = ({ text, textChangedHandler }) => (
 		className='Input'
 		type='text'
 		name='text'
+		// placeholder={text}
 		value={text}
 		onChange={textChangedHandler}
 		autoFocus
