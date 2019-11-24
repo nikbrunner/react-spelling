@@ -4,7 +4,7 @@ import './Char.scss';
 
 const Char = ({ char, color, clickedHandler }) => {
 	const charStyle = {
-		border: ` .25rem solid ${color}`,
+		borderColor: color,
 		backgroundColor: npmColor(color).rotate(180),
 		color: color
 	};
@@ -15,7 +15,22 @@ const Char = ({ char, color, clickedHandler }) => {
 
 	return (
 		<div
-			className='Char'
+			className={`
+				Char 
+				flex-grow
+				inline-block
+				text-2xl
+				md:text-5xl
+				font-bold
+				text-center
+				w-2/12
+				rounded
+				md:rounded-lg
+				border-solid
+				border-2
+				uppercase
+				cursor-pointer
+				`}
 			style={char === ' ' ? invisibleCharStyle : charStyle}
 			onClick={clickedHandler}
 		>

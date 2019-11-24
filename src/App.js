@@ -66,6 +66,7 @@ const App = () => {
 			/>
 			<Input
 				text={text}
+				texts={texts}
 				textChangedHandler={textChangedHandler}
 			/>
 			<Validator loading={loading} text={text} texts={texts} />

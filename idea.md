@@ -7,7 +7,7 @@
 
 ## Todos
 
-- [ ] Define Variables
-- [ ] Refactor Scss with said variables
+- [x] ~~_Define Variables_~~ [2019-11-24]
+- [x] ~~_Refactor Scss with said variables_~~ [2019-11-24]
 - [ ] Transparent spinner
 - [ ] Char => Letter

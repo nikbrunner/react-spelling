@@ -1,5 +1,3 @@
-import npmColor from 'color';
-
 const randomColorHSL = (
 	saturationMin,
 	saturationMax,
@@ -18,21 +16,9 @@ const randomColorHSL = (
 	return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 };
 
-const baseColor = randomColorHSL(25, 50, 85, 95);
-
-const appColors = {
-	bgColor: baseColor,
-	fontColor: npmColor(baseColor)
-		.rotate(180)
-		.darken(0.5)
-		.saturate(1)
-};
-
 const paintApp = () => {
 	document.querySelector('html').style.backgroundColor =
-		appColors.bgColor;
-	document.querySelector('html').style.color =
-		appColors.fontColor;
+		'#fbc531';
 };
 
 export { randomColorHSL, paintApp };

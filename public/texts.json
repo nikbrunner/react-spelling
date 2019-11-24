@@ -1,16 +1,20 @@
 {
 	"de": {
-		"title": "Lerne lesen und schreiben!",
+		"title": "Buchstaben!",
+		"inputPlaceholder": "Schreibe hier.. ",
 		"validator": {
-			"success": "Sehr gut!",
-			"error": "Schreibe den vorgegebenen Satz oder Wort ab. 😃"
-		}
+			"success": "Sehr gut! 👏",
+			"info": "Schreibe den vorgegebenen Satz oder Wort ab. 😃"
+		},
+		"words": ["Ball", "Sister", "Plate"]
 	},
 	"en": {
-		"title": "Learn reading und writing!",
+		"title": "Letters!",
+		"inputPlaceholder": "Type here.. ",
 		"validator": {
-			"success": "Very good!",
-			"error": "Write the same sentence or word. 😃"
-		}
+			"success": "Very good! 👏",
+			"info": "Write the same sentence or word. 😃"
+		},
+		"words": ["Ball", "Schwester", "Teller"]
 	}
 }

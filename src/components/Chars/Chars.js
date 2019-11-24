@@ -1,6 +1,5 @@
 import React from 'react';
 import Char from './Char';
-import './Chars.scss';
 
 const Chars = ({ text, setText, colors }) => {
 	const charArrayFromText = Array.from(text);
@@ -21,7 +20,22 @@ const Chars = ({ text, setText, colors }) => {
 		setText(charArrayCopyStringified);
 	};
 
-	return <div className='Chars'>{chars}</div>;
+	return (
+		<div
+			className={`
+			Chars 
+			flex 
+			flex-row 
+			flex-wrap 
+			flex-gap 
+			justify-center 
+			px-5 
+			md:px-0
+		`}
+		>
+			{chars}
+		</div>
+	);
 };
 
 export default Chars;

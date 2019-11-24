@@ -1,7 +1,6 @@
 import React from 'react';
-import './Input.scss';
 
-const Input = ({ text, textChangedHandler }) => (
+const Input = ({ text, texts, textChangedHandler }) => (
 	<input
 		className={`
 			Input 
@@ -10,20 +9,22 @@ const Input = ({ text, textChangedHandler }) => (
 			focus:shadow-outline 
 			border 
 			border-gray-300 
-			rounded-lg 
+			lg:rounded-lg 
 			py-2 
 			px-4 
 			my-3 
 			block 
 			text-center 
+			text-gray-900
+			text-2xl
 			w-full 
 			appearance-none 
 			leading-normal
+			shadow
 		`}
 		type='text'
 		name='text'
-		// todo implement lang for  placeholder
-		placeholder='Type something'
+		placeholder={texts.inputPlaceholder}
 		value={text}
 		onChange={textChangedHandler}
 		autoFocus
