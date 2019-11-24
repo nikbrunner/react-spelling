@@ -1,0 +1,16 @@
+{
+	"de": {
+		"title": "Lerne lesen und schreiben!",
+		"validator": {
+			"success": "Sehr gut!",
+			"error": "Schreibe den vorgegebenen Satz oder Wort ab. 😃"
+		}
+	},
+	"en": {
+		"title": "Learn reading und writing!",
+		"validator": {
+			"success": "Very good!",
+			"error": "Write the same sentence or word. 😃"
+		}
+	}
+}

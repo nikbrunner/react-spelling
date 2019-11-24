@@ -1,8 +1,13 @@
 import React from 'react';
+import Spinner from '../Spinner/Spinner';
 import './Header.scss';
 
-const Header = () => (
-	<h1 className='Header'>Lerne lesen und schreiben!</h1>
-);
+const Header = ({ texts, loading }) => {
+	return loading ? (
+		<Spinner />
+	) : (
+		<h1 className='Header'>{texts.title}</h1>
+	);
+};
 
 export default Header;
