@@ -11,3 +11,4 @@
 - [x] ~~_Refactor Scss with said variables_~~ [2019-11-24]
 - [ ] Transparent spinner
 - [ ] Char => Letter
+- [ ] Remove gap property
