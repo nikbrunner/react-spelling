@@ -8,12 +8,12 @@ const Validator = ({ text }) => {
 		<div className='Validator'>
 			{text.length < validationThreshold ? (
 				<p style={{ color: 'red', fontSize: '2rem' }}>
-					Message too short! You need at least{' '}
-					{validationThreshold} characters!
+					Zu wenige Buchstaben! Du brauchst mindestens{' '}
+					{validationThreshold} Buchstaben!
 				</p>
 			) : (
 				<p style={{ color: 'green', fontSize: '2rem' }}>
-					Message long enough! You have {text.length} characters!
+					Sehr gut! Du hast {text.length} Buchstaben!
 				</p>
 			)}
 		</div>
