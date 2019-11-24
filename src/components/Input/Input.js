@@ -9,7 +9,8 @@ const Input = ({ text, texts, textChangedHandler }) => (
 			focus:shadow-outline 
 			border 
 			border-gray-300 
-			lg:rounded-lg 
+
+			md:rounded-lg 
 			py-2 
 			px-4 
 			my-3 

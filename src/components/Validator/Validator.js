@@ -7,8 +7,18 @@ const Validator = ({ text, texts, loading }) => {
 	const validationThreshold = 15;
 
 	const ValidatorClasses = type => {
-		const style =
-			'flex items-center text-white text-xs shadow px-4 py-3 my-5 lg:rounded-lg';
+		const style = `
+			flex 
+			items-center
+			text-white
+			text-xs
+			md:text-xl
+			shadow
+			px-4
+			py-3
+			my-5
+			md:rounded-lg
+		`;
 
 		switch (type) {
 			case 'info':
