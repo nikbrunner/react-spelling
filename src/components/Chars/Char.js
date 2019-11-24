@@ -1,11 +1,11 @@
 import React from 'react';
-import colorCon from 'color';
+import npmColor from 'color';
 import './Char.scss';
 
 const Char = ({ char, color, clickedHandler }) => {
 	const charStyle = {
 		border: ` .25rem solid ${color}`,
-		backgroundColor: colorCon(color).rotate(180),
+		backgroundColor: npmColor(color).rotate(180),
 		color: color
 	};
 

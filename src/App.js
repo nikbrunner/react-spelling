@@ -17,14 +17,14 @@ const App = () => {
 	const [loading, setLoading] = useState(true);
 	const [text, setText] = useState('');
 	const [colors, setColors] = useState([]);
-	const [lang, setLang] = useState('en');
+	const [lang, setLang] = useState('de');
 	const [texts, setTexts] = useState({});
 
-	// Read texts files
+	// Read texts file every time lang is changed
 	useEffect(() => {
 		readTextsFile();
 		// eslint-disable-next-line
-	}, []);
+	}, [lang]);
 
 	const readTextsFile = async () => {
 		const res = await axios.get('./texts.json');
@@ -50,9 +50,19 @@ const App = () => {
 		setColors([...colors, randomColorHSL(75, 95, 50, 65)]);
 	};
 
+	// Function to switch languages
+	const switchLangHandler = language => {
+		setLang(language);
+	};
+
 	return (
-		<div className='App'>
-			<Header loading={loading} texts={texts} />
+		<div className='App container mx-auto'>
+			<Header
+				loading={loading}
+				texts={texts}
+				lang={lang}
+				switchLangHandler={switchLangHandler}
+			/>
 			<Input
 				text={text}
 				textChangedHandler={textChangedHandler}

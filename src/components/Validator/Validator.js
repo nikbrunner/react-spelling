@@ -11,11 +11,11 @@ const Validator = ({ text, texts, loading }) => {
 	) : (
 		<div className='Validator'>
 			{text.length < validationThreshold ? (
-				<p style={{ color: 'red', fontSize: '2rem' }}>
+				<p className='text-gray-500 text-xl'>
 					{texts.validator.error}
 				</p>
 			) : (
-				<p style={{ color: 'green', fontSize: '2rem' }}>
+				<p className='text-green-500 text-xl'>
 					{texts.validator.success}
 				</p>
 			)}

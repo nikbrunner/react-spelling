@@ -1,0 +1,36 @@
+@mixin flex(
+	$flex-flow,
+	$justify-content,
+	$align-content,
+	$align-items
+) {
+	display: flex;
+	flex-flow: $flex-flow;
+	justify-content: $justify-content;
+	align-content: $align-content;
+	align-items: $align-items;
+}
+@mixin boxShadow--tight($shadow--color: #0f0f0f33) {
+	box-shadow: $shadow--color 0px 2px 4px;
+}
+
+@mixin boxShadow--tight--inset($shadow--color: #0f0f0f33) {
+	box-shadow: $shadow--color 0px 0px 4px inset;
+}
+
+@mixin textShadow() {
+	text-shadow: 0 1.5px rgba(0, 0, 0, 0.5),
+		0 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+@mixin buttonStyle() {
+	display: inline-block;
+	border: none;
+	background: $color-gray-mid;
+	color: $color-primary-light;
+	cursor: pointer;
+	&:hover {
+		background: $color-primary;
+		color: #fff;
+	}
+}
