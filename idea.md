@@ -10,3 +10,4 @@
 - [ ] Define Variables
 - [ ] Refactor Scss with said variables
 - [ ] Transparent spinner
+- [ ] Char => Letter

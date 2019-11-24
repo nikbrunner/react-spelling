@@ -7,9 +7,7 @@ const Header = ({ texts, loading, switchLangHandler, lang }) => {
 		<Spinner />
 	) : (
 		<header className='flex justify-between my-5'>
-			<h1 className='Header text-5xl text-blue-500'>
-				{texts.title}
-			</h1>
+			<h1 className='Header text-5xl'>{texts.title}</h1>
 			<div className='inline-flex'>
 				<button
 					className={`${

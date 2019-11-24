@@ -1,7 +1,7 @@
 .Char {
 	display: inline-block;
 	text-transform: uppercase;
-	transition: 0.25s background-color;
+	transition: 0.25s all;
 	padding: 2.5vmin;
 	min-width: 5vmin;
 	font-weight: bold;
@@ -10,6 +10,11 @@
 	border-radius: 1rem;
 	text-shadow: 0.25vmin 0.25vmin rgba(0, 0, 0, 0.5);
 	box-shadow: 0 0.25vmin 0.5vmin rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0 1vmin 5vmin rgba(0, 0, 0, 0.25);
+		transform: translateY(-1vmin);
+	}
 	&:last-of-type {
 		animation: fadeIn 0.5s alternate infinite,
 			bouncer 0.15s alternate 1;

@@ -1,6 +1,6 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
-import { randomColorHSL } from './lib/colorGenerator';
+import { randomColorHSL, paintApp } from './lib/colorFactory';
 import axios from 'axios';
 
 // Components
@@ -10,7 +10,7 @@ import Input from './components/Input/Input';
 import Header from './components/Header/Header';
 
 // CSS
-import './App.scss';
+import './style/App.scss';
 
 const App = () => {
 	// Initial input text state
@@ -22,6 +22,7 @@ const App = () => {
 
 	// Read texts file every time lang is changed
 	useEffect(() => {
+		paintApp();
 		readTextsFile();
 		// eslint-disable-next-line
 	}, [lang]);
