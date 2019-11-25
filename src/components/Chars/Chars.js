@@ -24,11 +24,7 @@ const Chars = ({ text, setText, colors }) => {
 		<div
 			className={`
 			Chars 
-			flex 
-			flex-row 
-			flex-wrap 
-			flex-gap 
-			justify-center 
+			grid-with-gap
 			px-5 
 			md:px-0
 		`}

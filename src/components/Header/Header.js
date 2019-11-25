@@ -5,7 +5,7 @@ const Header = ({ texts, loading, switchLangHandler, lang }) => {
 	return loading ? (
 		<Spinner />
 	) : (
-		<header className='flex justify-between my-5 px-5'>
+		<header className='flex justify-between my-5 px-5 md:px-0'>
 			<h1 className='Header text-3xl xl:text-5xl text-blue-500 font-black antialiased'>
 				{texts.title}
 			</h1>

@@ -5,3 +5,9 @@
 .flex-gap {
 	gap: 1rem;
 }
+
+.grid-with-gap {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 1rem;
+}

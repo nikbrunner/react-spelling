@@ -23,7 +23,6 @@ const Char = ({ char, color, clickedHandler }) => {
 				md:text-5xl
 				font-bold
 				text-center
-				w-2/12
 				rounded
 				md:rounded-lg
 				border-solid
