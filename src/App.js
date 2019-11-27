@@ -1,7 +1,7 @@
 // Libraries
 import React, { useState } from 'react';
 import { randomColorHSL, paintApp } from './lib/colorFactory';
-import { useTextsProcessing } from './lib/customHooks';
+import { useTextProcessor } from './lib/customHooks';
 
 // Components
 import Header from './components/Header/Header';
@@ -27,7 +27,7 @@ const App = () => {
 
 	paintApp();
 
-	useTextsProcessing(
+	useTextProcessor(
 		loading,
 		setLoading,
 		texts,

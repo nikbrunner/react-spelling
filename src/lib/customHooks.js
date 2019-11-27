@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import axios from 'axios';
 
-const useTextsProcessing = (
+const useTextProcessor = (
 	loading,
 	setLoading,
 	texts,
@@ -58,4 +58,4 @@ const useTextsProcessing = (
 	}, [lang]);
 };
 
-export { useTextsProcessing };
+export { useTextProcessor };
