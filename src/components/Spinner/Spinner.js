@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import spinner from './spinner.gif';
+import spinner from './spinner.svg';
 
 const Spinner = () => (
 	<Fragment>
@@ -7,10 +7,9 @@ const Spinner = () => (
 			src={spinner}
 			alt='loading.. '
 			style={{
-				width: '100px',
+				width: '1rem',
 				margin: 'auto',
-				display: 'block',
-				backgroundBlendMode: 'darken'
+				display: 'block'
 			}}
 		/>
 	</Fragment>

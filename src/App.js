@@ -1,13 +1,14 @@
 // Libraries
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { randomColorHSL, paintApp } from './lib/colorFactory';
-import axios from 'axios';
+import { useTextsProcessing } from './lib/customHooks';
 
 // Components
-import Validator from './components/Validator/Validator';
-import Chars from './components/Chars/Chars';
-import Input from './components/Input/Input';
 import Header from './components/Header/Header';
+import Objective from './components/Objective/Objective';
+import Input from './components/Input/Input';
+import Message from './components/Message/Message';
+import Chars from './components/Chars/Chars';
 
 // CSS
 import './style/App.scss';
@@ -19,36 +20,35 @@ const App = () => {
 	const [colors, setColors] = useState([]);
 	const [lang, setLang] = useState('de');
 	const [texts, setTexts] = useState({});
+	const [objective, setObjective] = useState('');
+	const [objectiveReached, setObjectiveReached] = useState(
+		false
+	);
 
-	// Read texts file every time lang is changed
-	useEffect(() => {
-		paintApp();
-		readTextsFile();
-		// eslint-disable-next-line
-	}, [lang]);
+	paintApp();
 
-	const readTextsFile = async () => {
-		const res = await axios.get('./texts.json');
-		switch (lang) {
-			case 'de':
-				setTexts(res.data.de);
-				setLoading(false);
-				break;
-			case 'en':
-				setTexts(res.data.en);
-				setLoading(false);
-				break;
-			default:
-				setTexts(res.data.de);
-				setLoading(false);
-				break;
-		}
-	};
+	useTextsProcessing(
+		loading,
+		setLoading,
+		texts,
+		setTexts,
+		lang,
+		setObjective,
+		setObjectiveReached
+	);
 
 	// When the value of the input changes, update state for text and colors
 	const textChangedHandler = e => {
-		setText(e.target.value.toUpperCase());
+		// For every event, add a new color to the colors array
 		setColors([...colors, randomColorHSL(75, 95, 50, 65)]);
+		// Update text state from input (Two Way Binding) ..
+		// And compare text string with objective string..
+		// Set objective reached when both are similiar
+		const text = e.target.value.toUpperCase();
+		setText(text);
+		text !== objective
+			? setObjectiveReached(false)
+			: setObjectiveReached(true);
 	};
 
 	// Function to switch languages
@@ -64,12 +64,17 @@ const App = () => {
 				lang={lang}
 				switchLangHandler={switchLangHandler}
 			/>
+			<Objective loading={loading} objective={objective} />
 			<Input
 				text={text}
 				texts={texts}
 				textChangedHandler={textChangedHandler}
 			/>
-			<Validator loading={loading} text={text} texts={texts} />
+			<Message
+				loading={loading}
+				texts={texts}
+				objectiveReached={objectiveReached}
+			/>
 			<Chars text={text} setText={setText} colors={colors} />
 		</div>
 	);

@@ -2,19 +2,19 @@
 	"de": {
 		"title": "Buchstaben!",
 		"inputPlaceholder": "Schreibe hier.. ",
-		"validator": {
+		"messages": {
 			"success": "Sehr gut! 👏",
 			"info": "Schreibe den vorgegebenen Satz oder Wort ab. 😃"
 		},
-		"words": ["Ball", "Sister", "Plate"]
+		"words": ["Ball", "Schwester", "Teller"]
 	},
 	"en": {
 		"title": "Letters!",
 		"inputPlaceholder": "Type here.. ",
-		"validator": {
+		"messages": {
 			"success": "Very good! 👏",
 			"info": "Write the same sentence or word. 😃"
 		},
-		"words": ["Ball", "Schwester", "Teller"]
+		"words": ["Ball", "Sister", "Plate"]
 	}
 }
