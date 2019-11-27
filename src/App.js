@@ -1,5 +1,8 @@
 // Libraries
 import React, { useState } from 'react';
+import { Howl } from 'howler';
+
+// Own lib files
 import { randomColorHSL, paintApp } from './lib/colorFactory';
 import { useTextProcessor } from './lib/customHooks';
 
@@ -25,6 +28,12 @@ const App = () => {
 		false
 	);
 
+	var typingSound = new Howl({
+		src: ['./sounds/click.mp3']
+	});
+
+	// init function to set some kind of gameIsRunning state and choose a new word
+
 	paintApp();
 
 	useTextProcessor(
@@ -39,6 +48,8 @@ const App = () => {
 
 	// When the value of the input changes, update state for text and colors
 	const textChangedHandler = e => {
+		//Play a typingSound on every type
+		typingSound.play();
 		// For every event, add a new color to the colors array
 		setColors([...colors, randomColorHSL(75, 95, 50, 65)]);
 		// Update text state from input (Two Way Binding) ..

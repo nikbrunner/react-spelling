@@ -9,6 +9,8 @@
 
 - [x] ~~_Define Variables_~~ [2019-11-24]
 - [x] ~~_Refactor Scss with said variables_~~ [2019-11-24]
-- [ ] Transparent spinner
+- [x] ~~_Transparent spinner_~~ [2019-11-27]
+- [x] ~~_Remove gap property_~~ [2019-11-27]
+- [ ] Implement Howler for typing sound
+- [ ] Implement Init Function to start a new game
 - [ ] Char => Letter
-- [ ] Remove gap property
