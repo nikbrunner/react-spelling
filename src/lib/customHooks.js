@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { pickObjective } from './gameFunctions';
 import axios from 'axios';
 
 const useTextProcessor = (
@@ -40,14 +41,7 @@ const useTextProcessor = (
 
 	// Pick a 'word' from the words array in the texts file and set a objective
 	useEffect(() => {
-		if (!loading) {
-			const words = texts.words;
-			setObjective(
-				words[
-					Math.floor(Math.random() * words.length)
-				].toUpperCase()
-			);
-		}
+		pickObjective(loading, texts, setObjective);
 		// eslint-disable-next-line
 	}, [texts]);
 

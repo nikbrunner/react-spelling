@@ -1,20 +1,38 @@
 {
 	"de": {
-		"title": "Buchstaben!",
+		"title": "Lerne Buchstaben",
 		"inputPlaceholder": "Schreibe hier.. ",
 		"messages": {
 			"success": "Sehr gut! 👏",
 			"info": "Schreibe den vorgegebenen Satz oder Wort ab. 😃"
 		},
-		"words": ["Ball", "Schwester", "Teller"]
+		"words": [
+			"Ball",
+			"Schwester",
+			"Teller",
+			"Sitz",
+			"Zug",
+			"Computer",
+			"Licht",
+			"Kaffee"
+		]
 	},
 	"en": {
-		"title": "Letters!",
+		"title": "Learn letters",
 		"inputPlaceholder": "Type here.. ",
 		"messages": {
 			"success": "Very good! 👏",
 			"info": "Write the same sentence or word. 😃"
 		},
-		"words": ["Ball", "Sister", "Plate"]
+		"words": [
+			"Ball",
+			"Sister",
+			"Plate",
+			"Seat",
+			"Train",
+			"Computer",
+			"Light",
+			"Coffee"
+		]
 	}
 }

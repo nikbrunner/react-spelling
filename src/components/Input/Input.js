@@ -1,6 +1,17 @@
 import React from 'react';
 
-const Input = ({ text, texts, textChangedHandler }) => (
+const Input = ({
+	loading,
+	text,
+	setText,
+	colors,
+	setColors,
+	texts,
+	objective,
+	setObjective,
+	setObjectiveReached,
+	textChangedHandler
+}) => (
 	<input
 		className={`
 			Input 
