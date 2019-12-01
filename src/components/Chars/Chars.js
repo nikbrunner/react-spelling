@@ -1,8 +1,8 @@
 import React from 'react';
 import Char from './Char';
 
-const Chars = ({ text, setText, colors }) => {
-	const charArrayFromText = Array.from(text);
+const Chars = ({ input, setText, colors }) => {
+	const charArrayFromText = Array.from(input);
 
 	const chars = charArrayFromText.map((char, index) => (
 		<Char

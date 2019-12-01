@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input = ({ text, texts, textChangedHandler }) => (
+const Input = ({ input, texts, inputChangedHandler }) => (
 	<input
 		className={`
 			Input 
@@ -25,8 +25,8 @@ const Input = ({ text, texts, textChangedHandler }) => (
 		type='text'
 		name='text'
 		placeholder={texts.inputPlaceholder}
-		value={text}
-		onChange={textChangedHandler}
+		value={input}
+		onChange={inputChangedHandler}
 		autoFocus
 	/>
 );

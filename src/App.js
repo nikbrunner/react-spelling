@@ -4,9 +4,8 @@ import { Howl } from 'howler';
 
 // Own lib files
 import { randomColorHSL, paintApp } from './lib/colorFactory';
-import { useTextProcessor } from './lib/customHooks';
+import { useTextsReader } from './lib/customHooks';
 import { pickObjective } from './lib/gameFunctions';
-// import { textChangedHandler } from './lib/handlerFunctions';
 
 // Components
 import Header from './components/Header/Header';
@@ -21,7 +20,7 @@ import './style/App.scss';
 const App = () => {
 	// Initial input text state
 	const [loading, setLoading] = useState(true);
-	const [text, setText] = useState('');
+	const [input, setText] = useState('');
 	const [words, setWords] = useState([]);
 	const [colors, setColors] = useState([]);
 	const [lang, setLang] = useState('en');
@@ -52,11 +51,13 @@ const App = () => {
 		}
 	});
 
+	// Paint app on load
 	useEffect(() => {
 		paintApp();
 	}, []);
 
-	useTextProcessor(
+	// Use custom hook to read text data
+	useTextsReader(
 		loading,
 		setLoading,
 		setTexts,
@@ -68,7 +69,7 @@ const App = () => {
 	);
 
 	// When the value of the input changes, update state for text and colors
-	const textChangedHandler = e => {
+	const inputChangedHandler = e => {
 		//Play a typingSound on every type
 		typingSound.play();
 		// For every event, add a new color to the colors array
@@ -76,10 +77,11 @@ const App = () => {
 		// Update text state from input (Two Way Binding) ..
 		// And compare text string with objective string..
 		// Set objective reached when both are similar
-		const text = e.target.value.toUpperCase();
-		setText(text);
-		if (text !== objective) {
+		const currentInput = e.target.value.toUpperCase();
+		setText(currentInput);
+		if (currentInput !== objective) {
 			setObjectiveReached(false);
+			// todo else if currentInput.length === objective.length play sad sound
 		} else {
 			setObjectiveReached(true);
 			objectiveReachedSound.play();
@@ -105,16 +107,16 @@ const App = () => {
 			/>
 			<Objective loading={loading} objective={objective} />
 			<Input
-				text={text}
+				input={input}
 				texts={texts}
-				textChangedHandler={textChangedHandler}
+				inputChangedHandler={inputChangedHandler}
 			/>
 			<Message
 				loading={loading}
 				texts={texts}
 				objectiveReached={objectiveReached}
 			/>
-			<Chars text={text} setText={setText} colors={colors} />
+			<Chars input={input} setText={setText} colors={colors} />
 		</div>
 	);
 };

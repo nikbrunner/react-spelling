@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { pickObjective } from './gameFunctions';
 import axios from 'axios';
 
-const useTextProcessor = (
+export const useTextsReader = (
 	loading,
 	setLoading,
 	setTexts,
@@ -61,5 +61,3 @@ const useTextProcessor = (
 		// eslint-disable-next-line
 	}, [lang]);
 };
-
-export { useTextProcessor };
