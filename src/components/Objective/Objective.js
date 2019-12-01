@@ -14,7 +14,7 @@ const Objective = ({ loading, objective }) => {
             bg-blue-500
             font-bold
 			text-white
-			md:rounded-lg
+			lg:rounded-lg
 
         `}
 		>

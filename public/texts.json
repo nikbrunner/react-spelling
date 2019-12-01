@@ -1,6 +1,6 @@
 {
 	"de": {
-		"title": "Lerne Buchstaben",
+		"title": "Buchstabinator",
 		"score": "Punkte",
 		"seconds": "Sekunden",
 		"scorePerSeconds": "Punkte / Sekunde",
@@ -8,20 +8,10 @@
 		"messages": {
 			"success": "Sehr gut! 👏",
 			"info": "Schreibe den vorgegebenen Satz oder Wort ab. 😃"
-		},
-		"words": [
-			"Ball",
-			"Schwester",
-			"Teller",
-			"Sitz",
-			"Zug",
-			"Computer",
-			"Licht",
-			"Kaffee"
-		]
+		}
 	},
 	"en": {
-		"title": "Learn letters",
+		"title": "Spellinator",
 		"score": "Points",
 		"seconds": "Seconds",
 		"scorePerSeconds": "Points / Second",
@@ -29,16 +19,6 @@
 		"messages": {
 			"success": "Very good! 👏",
 			"info": "Write the same sentence or word. 😃"
-		},
-		"words": [
-			"Ball",
-			"Sister",
-			"Plate",
-			"Seat",
-			"Train",
-			"Computer",
-			"Light",
-			"Coffee"
-		]
+		}
 	}
 }

@@ -1,17 +1,6 @@
 import React from 'react';
 
-const Input = ({
-	loading,
-	text,
-	setText,
-	colors,
-	setColors,
-	texts,
-	objective,
-	setObjective,
-	setObjectiveReached,
-	textChangedHandler
-}) => (
+const Input = ({ text, texts, textChangedHandler }) => (
 	<input
 		className={`
 			Input 
@@ -20,7 +9,7 @@ const Input = ({
 			focus:shadow-outline 
 			border 
 			border-gray-300 
-			md:rounded-lg 
+			lg:rounded-lg 
 			py-2 
 			px-4 
 			my-3 

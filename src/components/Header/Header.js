@@ -5,27 +5,24 @@ const Header = ({
 	texts,
 	loading,
 	score,
-	seconds,
 	lang,
 	switchLangHandler
 }) => {
+	const calcPointsLabel = () => {
+		return window.innerWidth <= 414
+			? score
+			: `${texts.score}: ${score}`;
+	};
+
 	return loading ? (
 		<Spinner />
 	) : (
-		<header className='flex justify-between my-5 px-5 md:px-0'>
-			<h1 className='Header flex content-center items-center text-3xl xl:text-5xl text-blue-500 font-black antialiased'>
+		<header className='flex justify-between my-5 px-5 lg:px-0'>
+			<h1 className='Header flex content-center items-center text-xl lg:text-5xl text-blue-500 font-black antialiased'>
 				{texts.title}
 			</h1>
-			<div className='flex flex-col content-center items-center'>
-				<p className='text-blue-500'>
-					{texts.score}: {score}
-				</p>
-				<p>
-					{texts.seconds}: {seconds}
-				</p>
-				<p>
-					{texts.scorePerSeconds}: {score / seconds}
-				</p>
+			<div className='inline-flex shadow items-center bg-gray-300 text-gray-800 rounded font-bold py-2 px-4'>
+				<p className=''>{calcPointsLabel()}</p>
 			</div>
 			<div className='inline-flex shadow'>
 				<button

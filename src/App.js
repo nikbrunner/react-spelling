@@ -1,6 +1,6 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
-// import { Howl } from 'howler';
+import { Howl } from 'howler';
 
 // Own lib files
 import { randomColorHSL, paintApp } from './lib/colorFactory';
@@ -22,39 +22,36 @@ const App = () => {
 	// Initial input text state
 	const [loading, setLoading] = useState(true);
 	const [text, setText] = useState('');
+	const [words, setWords] = useState([]);
 	const [colors, setColors] = useState([]);
-	const [lang, setLang] = useState('de');
+	const [lang, setLang] = useState('en');
 	const [texts, setTexts] = useState({});
 	const [objective, setObjective] = useState('');
 	const [objectiveReached, setObjectiveReached] = useState(
 		false
 	);
 	const [score, setScore] = useState(0);
-	const [seconds, setSeconds] = useState(0);
+
+	// Declare sounds
+	const typingSound = new Howl({
+		src: ['/sounds/click.mp3']
+	});
+	const successSound = new Howl({
+		src: ['/sounds/kaching.mp3'],
+		volume: 0.35
+	});
 
 	useEffect(() => {
-		let timer = setInterval(() => {
-			let newSeconds = seconds + 1;
-			console.log(newSeconds);
-			setSeconds(newSeconds);
-		}, 1000);
-		// eslint-disable-next-line;
+		paintApp();
 	}, []);
-
-	// Declare a typing sound
-	// 	const typingSound = new Howl({
-	// 		src: ['./sounds/click.mp3']
-	// 	});
-
-	// init function to set some kind of gameIsRunning state and choose a new word
-
-	paintApp();
 
 	useTextProcessor(
 		loading,
 		setLoading,
 		texts,
 		setTexts,
+		words,
+		setWords,
 		lang,
 		setObjective,
 		setObjectiveReached
@@ -63,7 +60,7 @@ const App = () => {
 	// When the value of the input changes, update state for text and colors
 	const textChangedHandler = e => {
 		//Play a typingSound on every type
-		// typingSound.play();
+		typingSound.play();
 		// For every event, add a new color to the colors array
 		setColors([...colors, randomColorHSL(75, 95, 50, 65)]);
 		// Update text state from input (Two Way Binding) ..
@@ -75,8 +72,9 @@ const App = () => {
 			setObjectiveReached(false);
 		} else {
 			setObjectiveReached(true);
+			successSound.play();
 			setScore(score + 1);
-			pickObjective(loading, texts, setObjective);
+			pickObjective(loading, words, setObjective);
 			setText('');
 		}
 	};
@@ -92,7 +90,6 @@ const App = () => {
 				loading={loading}
 				texts={texts}
 				score={score}
-				seconds={seconds}
 				lang={lang}
 				switchLangHandler={switchLangHandler}
 			/>

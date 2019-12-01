@@ -14,7 +14,7 @@ const Message = ({ loading, texts, objectiveReached }) => {
 			shadow
 			px-4
 			py-3
-			md:rounded-lg
+			lg:rounded-lg
 		`;
 
 		switch (type) {

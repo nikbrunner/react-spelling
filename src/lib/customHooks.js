@@ -7,6 +7,8 @@ const useTextProcessor = (
 	setLoading,
 	texts,
 	setTexts,
+	words,
+	setWords,
 	lang,
 	setObjective,
 	setObjectiveReached
@@ -19,20 +21,29 @@ const useTextProcessor = (
 
 	// Read texts.json file and populate texts state object
 	const readTextsFile = async () => {
-		const res = await axios.get('./texts.json');
+		const texts = await axios.get('/texts.json');
+		const wordCount = 500;
+		const wordsDE = await axios.get('/words.json');
+		const wordsEN = await axios.get(
+			`https://random-word-api.herokuapp.com/word?key=D5MXW018&number=${wordCount}`
+		);
+
 		switch (lang) {
-			case 'de':
-				setTexts(res.data.de);
+			case 'en':
+				setTexts(texts.data.en);
+				setWords(wordsEN.data);
 				setLoading(false);
 				setObjectiveReached(false);
 				break;
-			case 'en':
-				setTexts(res.data.en);
+			case 'de':
+				setTexts(texts.data.de);
+				setWords(wordsDE.data);
 				setLoading(false);
 				setObjectiveReached(false);
 				break;
 			default:
-				setTexts(res.data.de);
+				setTexts(texts.data.en);
+				setWords(wordsEN.data);
 				setLoading(false);
 				setObjectiveReached(false);
 				break;
@@ -41,9 +52,9 @@ const useTextProcessor = (
 
 	// Pick a 'word' from the words array in the texts file and set a objective
 	useEffect(() => {
-		pickObjective(loading, texts, setObjective);
+		pickObjective(loading, words, setObjective);
 		// eslint-disable-next-line
-	}, [texts]);
+	}, [words]);
 
 	// Read texts file every time lang is changed
 	useEffect(() => {

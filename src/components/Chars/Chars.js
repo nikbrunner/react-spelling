@@ -26,7 +26,7 @@ const Chars = ({ text, setText, colors }) => {
 			Chars 
 			grid-with-gap
 			px-5 
-			md:px-0
+			lg:px-0
 			my-3 
 		`}
 		>
