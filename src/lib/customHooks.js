@@ -5,7 +5,6 @@ import axios from 'axios';
 const useTextProcessor = (
 	loading,
 	setLoading,
-	texts,
 	setTexts,
 	words,
 	setWords,

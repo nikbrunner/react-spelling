@@ -34,11 +34,22 @@ const App = () => {
 
 	// Declare sounds
 	const typingSound = new Howl({
-		src: ['/sounds/click.mp3']
+		src: ['/sounds/click.mp3'],
+		volume: 1.5,
+		onplayerror: function() {
+			typingSound.once('unlock', function() {
+				typingSound.play();
+			});
+		}
 	});
-	const successSound = new Howl({
+	const objectiveReachedSound = new Howl({
 		src: ['/sounds/kaching.mp3'],
-		volume: 0.35
+		volume: 0.35,
+		onplayerror: function() {
+			objectiveReachedSound.once('unlock', function() {
+				objectiveReachedSound.play();
+			});
+		}
 	});
 
 	useEffect(() => {
@@ -48,7 +59,6 @@ const App = () => {
 	useTextProcessor(
 		loading,
 		setLoading,
-		texts,
 		setTexts,
 		words,
 		setWords,
@@ -72,7 +82,7 @@ const App = () => {
 			setObjectiveReached(false);
 		} else {
 			setObjectiveReached(true);
-			successSound.play();
+			objectiveReachedSound.play();
 			setScore(score + 1);
 			pickObjective(loading, words, setObjective);
 			setText('');
