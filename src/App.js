@@ -1,5 +1,5 @@
 // Libraries
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Howl } from 'howler';
 
 // Own lib files
@@ -29,6 +29,17 @@ const App = () => {
 	const [objectiveReached, setObjectiveReached] = useState(
 		false
 	);
+	const [score, setScore] = useState(0);
+	const [seconds, setSeconds] = useState(0);
+
+	useEffect(() => {
+		let timer = setInterval(() => {
+			let newSeconds = seconds + 1;
+			console.log(newSeconds);
+			setSeconds(newSeconds);
+		}, 1000);
+		// eslint-disable-next-line;
+	}, []);
 
 	// Declare a typing sound
 	// 	const typingSound = new Howl({
@@ -64,6 +75,7 @@ const App = () => {
 			setObjectiveReached(false);
 		} else {
 			setObjectiveReached(true);
+			setScore(score + 1);
 			pickObjective(loading, texts, setObjective);
 			setText('');
 		}
@@ -79,6 +91,8 @@ const App = () => {
 			<Header
 				loading={loading}
 				texts={texts}
+				score={score}
+				seconds={seconds}
 				lang={lang}
 				switchLangHandler={switchLangHandler}
 			/>

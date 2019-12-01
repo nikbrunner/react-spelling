@@ -1,6 +1,9 @@
 {
 	"de": {
 		"title": "Lerne Buchstaben",
+		"score": "Punkte",
+		"seconds": "Sekunden",
+		"scorePerSeconds": "Punkte / Sekunde",
 		"inputPlaceholder": "Schreibe hier.. ",
 		"messages": {
 			"success": "Sehr gut! 👏",
@@ -19,6 +22,9 @@
 	},
 	"en": {
 		"title": "Learn letters",
+		"score": "Points",
+		"seconds": "Seconds",
+		"scorePerSeconds": "Points / Second",
 		"inputPlaceholder": "Type here.. ",
 		"messages": {
 			"success": "Very good! 👏",
