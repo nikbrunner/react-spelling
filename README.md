@@ -1,4 +1,4 @@
-# Spelling
+# React Spelling 
 
 This is a practical React exercise for me. And hopefully a spelling exercise for my future kids. 😃
 
